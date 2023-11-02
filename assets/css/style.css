@@ -1,0 +1,349 @@
+:root {
+  /* text colors */
+  --Pale-Violet : hsl(276, 100%, 81%); /* (sub-heading at the top of the app UI) */
+  --Moderate-Violet : hsl(276, 55%, 52%); /* (chat on the left) */
+  --Desaturated-Dark-Violet : hsl(271, 15%, 43%); /* (chat on the right) */
+  --Grayish-Blue : hsl(206, 6%, 79%); /* (placeholder text) */
+  --Very-Dark-Desaturated-Violet : hsl(271, 36%, 24%); /* (main heading) */
+  --Dark-Grayish-Violet : hsl(270, 7%, 64%); /* (paragraph) */
+  /* gradients */
+  --Light-Magenta: hsl(293, 100%, 63%);
+  --Light-Violet: hsl(264, 100%, 61%);
+  /* secondary */
+  --White: hsl(0, 0%, 100%);
+  --Light-Grayish-Violet : hsl(270, 20%, 96%); /* (app background) */
+  --Very-Dark-Desaturated-Violet : hsl(271, 36%, 24%); /* (submit button background) */
+  --Very-Light-Magenta : hsl(289, 100%, 72%); /* (radio button outline) */
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  overflow: hidden;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+main::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 40%;
+  height: 90vh;
+  background-image: linear-gradient(150deg, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+  border-radius: 0 0 50% 50%;
+  top: -30px;
+  left: -130px;
+}
+
+main::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 40%;
+  height: 90vh;
+  background-color: var(--Light-Grayish-Violet);
+  border-radius: 50% 50% 0 0;
+  opacity: .5;
+  bottom: -30px;
+  right: -250px;
+}
+
+.container {
+  width: 950px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.text {
+  width: 450px;
+}
+
+.text h1 {
+  color: var(--Very-Dark-Desaturated-Violet);
+  margin-bottom: 1.8rem;
+  font-weight: 500;
+  font-size: 2.6rem;
+}
+
+.text p {
+  color: var(--Dark-Grayish-Violet);
+  line-height: 1.8;
+}
+
+.phone {
+  width: 250px;
+  margin-left: 150px;
+  font-size: 14px;
+  background-color: var(--Light-Grayish-Violet);
+  border-radius: 14px;
+  outline: 11px solid var(--White);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 20px 20px 27px rgba(0, 0, 0, .2);
+  position: relative;
+}
+
+.phone-notch {
+  width: 60%;
+  height: 20px;
+  position: absolute;
+  background-color: var(--White);
+  border-radius: 0 0 15px 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.phone .user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(-90deg, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+  padding: 35px 15px 15px 15px;
+  border-radius: 0 0 7px 7px;
+}
+
+.phone .user-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-details .fa-chevron-left {
+  margin-right: 10px;
+  color: var(--Light-Grayish-Violet);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.fa-ellipsis-vertical {
+  color: var(--Light-Grayish-Violet);
+}
+
+.user-details div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
+}
+
+.user-details h2 {
+  color: var(--Light-Grayish-Violet);
+  font-weight: 400;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.user-details p {
+  color: var(--Pale-Violet);
+  font-size: 8px;
+}
+
+.user-details img {
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--White);
+  margin-right: 10px;
+}
+
+.chat-body {
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-text {
+  background-color: hsla(276, 100%, 81%, 0.13);
+  color: var(--Moderate-Violet);
+  width: 60%;
+  font-size: 9px;
+  padding: 9px 7px;
+  margin-bottom: 10px;
+  border-radius: 8px 8px 8px 4px;
+}
+
+.right-text {
+  background-color: var(--White);
+  width: 66%;
+  font-size: 9px;
+  padding: 9px 7px;
+  margin-bottom: 10px;
+  border-radius: 8px 8px 4px 8px;
+  align-self: flex-end;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, .2);
+  color: var(--Desaturated-Dark-Violet);
+}
+
+.right-images {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.right-images img {
+  width: 40px;
+  border-radius: 10px;
+}
+
+
+.pricing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(90deg, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+  width: 74%;
+  padding: 9px 7px;
+  margin-bottom: 10px;
+  border-radius: 8px 8px 8px 4px;
+}
+
+.pricing>div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pricing input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  margin-right: 8px;
+  width: 13px;
+  height: 13px;
+  border: 0.15em solid var(--Very-Light-Magenta);
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+.pricing input[type="radio"]::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--Light-Violet);
+}
+
+.pricing input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+.pricing label {
+  font-size: 9px;
+  color: var(--Light-Grayish-Violet);
+}
+
+.pricing h3 {
+  font-size: 13px;
+  padding-right: 12px;
+  color: var(--Light-Grayish-Violet);
+}
+
+.pricing:last-child {
+  margin-bottom: 1rem;
+}
+
+.send-message {
+  width: 100%;
+}
+
+.send-message form {
+  position: relative;
+}
+
+.send-message form, .send-message input {
+  width: 100%;
+}
+
+
+.send-message input {
+  border: none;
+  outline: none;
+  font-size: 10px;
+  color: var(--Grayish-Blue);
+  border-radius: 30px;
+  padding: 15px 13px;
+}
+
+.send-message input::placeholder {
+  font-size: 10px;
+  color: var(--Grayish-Blue);
+}
+
+.send-message button {
+  border: none;
+  outline: none;
+  background-color: var(--Very-Dark-Desaturated-Violet);
+  color: var(--Light-Grayish-Violet);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  position: absolute;
+  right: 7px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    overflow-y: auto;
+  }
+
+  .container {
+    flex-direction: column;
+    padding-block: 5rem;
+  }
+
+  main::before {
+    width: 300px;
+    height: 50vh;
+    top: 0;
+    left: -115px;
+  }
+
+  main::after {
+    width: 300px;
+    height: 50vh;
+    bottom: 0;
+    right: 0;
+    opacity: .4;
+  }
+
+  .text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .text h1 {
+    font-size: 2.5rem;
+  }
+
+  .text p {
+    font-size: 16px;
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  .phone {
+    margin-left: 0;
+    margin-bottom: 2.5rem;
+  }
+}
