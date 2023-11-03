@@ -302,7 +302,7 @@ main::after {
   transform: translateY(-50%);
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   body {
     overflow-y: auto;
   }
